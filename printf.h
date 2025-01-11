@@ -15,10 +15,12 @@
 # include <stdarg.h>
 # include <unistd.h>
 
-int		ft_printf(const char *, ...);
-int		ft_printchar(char c);
-int		ft_printstr(char *s);
-int		ft_printnbr(int n);
-size_t	ft_strnum(char *s);
+int	ft_printf(const char *, ...);
+int	ft_printchar(char c);
+int	ft_printstr(char *s);
+int	ft_printnbr(int n);
+int ft_printunnbr(unsigned int n);
+int	ft_puthexnbr();
+int	ft_printptr();
 
 #endif
