@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int ft_format(char c, va_list *arg)
 {
@@ -18,19 +18,19 @@ static int ft_format(char c, va_list *arg)
 
 	res = 0;
 	if (c == '%')
-		res += ft_printchar(c);
+		res = ft_printchar(c);
 	else if (c == 'c')
-		res += ft_printchar(va_arg(*arg, char));
+		res = ft_printchar(va_arg(*arg, int));
 	else if (c == 's')
-		res += ft_printstr(va_arg(*arg, char *));
+		res = ft_printstr(va_arg(*arg, char *));
 	else if (c == 'i' || c == 'd')
-		res += ft_printnbr(va_arg(*arg, int));
+		res = ft_printnbr(va_arg(*arg, int));
 	else if (c == 'u')
-		res += ft_printunnbr(va_arg(*arg, unsigned int));
+		res = ft_printunnbr(va_arg(*arg, unsigned int));
 	else if (c == 'p')
-		res += ft_printptr(va_arg(*arg, void *));
+			res += ft_printptr(va_arg(*arg, void *));
 	else if (c == 'x' || c == 'X')
-		res += ft_printhexnbr(va_arg(*arg, long));
+		res = ft_printhexnbr(va_arg(*arg, unsigned int), c);
 	return (res);
 }
 
@@ -51,8 +51,9 @@ int	ft_printf(const char *str, ...)
 			i++;
 		}
 		else
-			count += ft_printchar(&str[i]);
+			count += ft_printchar(str[i]);
 		i++;
 	}
+	va_end(args);
 	return (count);
 }
