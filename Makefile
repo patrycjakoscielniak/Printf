@@ -1,5 +1,5 @@
 NAME = libftprintf.a
-SRC = ft_printf.c
+SRC = ft_printf.c ft_printchar.c ft_printstr.c ft_printnbr.c ft_printunnbr.c ft_printhexnbr.c ft_printptr.c
 OBJ := $(SRC:%.c=%.o)
 CC = cc -Wall -Wextra -Werror
 
@@ -9,7 +9,7 @@ $(NAME): $(OBJ)
 	ar rsc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
-%.o: %.c libftprintf.h
+%.o: %.c ft_printf.h
 	$(CC) -I . -c $< -o $@
 
 clean: 
