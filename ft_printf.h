@@ -10,17 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 # include <stdarg.h>
 # include <unistd.h>
 
-int	ft_printf(const char *str, ...);
+int	ft_printf(const char *, ...);
 int	ft_printchar(char c);
 int	ft_printstr(char *s);
 int	ft_printnbr(int n);
 int ft_printunnbr(unsigned int n);
-int	ft_printhexnbr(unsigned int n);
-int	ft_printptr(void *);
+int	ft_printhexnbr(unsigned int n, char c);
+int	ft_printptr(void *ptr);
 
 #endif
