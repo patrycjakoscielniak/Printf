@@ -10,12 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int	ft_putstr(char *str)
+int	ft_printstr(char *str)
 {
 	int	count;
 
+	if (str == NULL)
+		return (ft_printstr("(null)"));
 	count = 0;
 	while (str[count])
 	{
